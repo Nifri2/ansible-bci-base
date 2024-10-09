@@ -1,0 +1,10 @@
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - docker build -t ansible-bci-base:latest .
+  upload:
+    cmds:
+      - docker tag ansible-bci-base:latest nifri/ansible-bci-base:latest
+      - docker push nifri/ansible-bci-base:latest
